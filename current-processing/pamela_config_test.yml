@@ -1,0 +1,20 @@
+ckpt_dir: ./ckpts
+output_dir: /Ovi/pamela/pictures/current-processing/outputs
+sample_steps: 80
+solver_name: unipc
+model_name: "960x960_10s" # ["720x720_5s", "960x960_5s", "960x960_10s"]
+shift: 3.5
+sp_size: 1
+audio_guidance_scale: 3.0
+video_guidance_scale: 3.2
+mode: "i2v" # ["t2v", "i2v", "t2i2v"] all comes with audio
+fp8: False
+cpu_offload: False
+seed: 103
+video_negative_prompt: "jitter, flicker, unstable motion, frame inconsistency, motion artifacts, warped motion, morphing, ghosting, stuttering frames, unnatural movement, rubbery animation, melting textures, distorted anatomy, bad hands, extra fingers, warped face, inconsistent facial structure, blur, low detail, low-resolution textures, pixelation, compression artifacts, over-saturation, washed-out colors, harsh lighting, blown highlights, underexposed shadows, color banding, chromatic aberration, AI artifacts, glitch, fake depth of field, unrealistic bokeh, incorrect motion blur, unrealistic physics, warped perspective"  # Artifacts to avoid in video
+audio_negative_prompt: "robotic, muffled, echo, distorted, metallic, synthetic, artificial tone, background hiss, clipping, static, environmental noise, reverberation, unnatural breaths, overprocessed voice, phase issues, ringing, unwanted ambience "    # Artifacts to avoid in audio
+video_frame_height_width: [704, 1280] # only useful if mode = t2v or t2i2v, recommended values: [704, 1280], [1280, 704], [960, 960], [512, 992], [992, 512], [960, 512], [512, 960], [720, 720], [448, 1120]
+text_prompt: /Ovi/pamela/pictures/current-processing/pamela_10s_i2v_test.csv
+slg_layer: 11
+each_example_n_times: 1
+
